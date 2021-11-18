@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div(class='list-title')
+    h1= title
+
+  ul
+    each grade in grade_list
+      li
+        a(href=grade.url) #{grade.grade_name}
+    else
+      li There are no grades at the moment.

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 #{title}: #{model.name}
+  p= model.description
+  p #[strong Grade: ] #{model.grade.grade_name}
+  p #[strong Series: ] #{model.series.series_name}
+  p #[strong Number in stock: ] #{model.numberInStock}
+
+    p Do you really want to delete this model kit?
+
+    form(method='POST' action='')
+      div.form-group
+        input#modelid.form-control(type='hidden',name='modelid', required='true', value=model._id )
+
+      button.btn.btn-primary(type='submit') Delete

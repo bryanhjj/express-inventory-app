@@ -1,0 +1,41 @@
+extends layout
+
+block content
+
+  div(class='content')
+    div(class='modelname-container')
+      h1(class='model-name') #{model.name}
+  
+    if model.model_image
+      div(class='modelimage-container')
+        img(src='/'+model.model_image, alt='image of the model kit')
+
+    div(class='model-details')
+      div(class='model-grade')
+        p #[strong Grade : ]
+          br
+          a(href=model.grade.url) #{model.grade.grade_name}
+      div(class='model-series')
+        p #[strong Series : ] 
+          br
+          a(href=model.series.url) #{model.series.series_name}
+      div(class='model-description')
+        p #[strong Description :] 
+          div(class='model-description-content')
+            p #{model.description}
+      br
+      div(class='model-price')
+        p #[strong Price :] 
+          p #{model.price} USD
+      br
+      div(class='model-qty')
+        p #[strong Qty in stock :]
+          p #{model.numberInStock}
+      br
+
+  hr
+  div
+    p
+      a(href=model.url+'/delete') Delete Model kit
+    p
+      a(href=model.url+'/update') Update Model kit

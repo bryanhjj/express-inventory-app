@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+  div(class='seriesname-container')
+    h1 #{series.series_info.series_name}
+  
+  if series.series_info.series_image
+    div(class='seriesimage-container')
+      img(src='/'+series.series_info.series_image, alt='icon of the series')
+
+  div(class='seriesdescp-container')
+    p #{series.series_info.series_description}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Model kits available in this series
+
+    ul
+      each modelkit in series_modelkits
+        li
+          a(href=modelkit.url) #{modelkit.name} (#{modelkit.grade.grade_name})
+
+      else
+        p This series has no associated model kits at the moment.
+
+  hr
+  div
+    p
+      a(href=series.series_info.url+'/delete') Delete Series
+    p
+      a(href=series.series_info.url+'/update') Update Series

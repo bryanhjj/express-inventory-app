@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='' enctype="multipart/form-data")
+    div.form-group
+      label(for='series_name') Grade:
+      input#series_name.form-control(type='text', placeholder='Gundam F91, V Gundam, etc.' name='series_name' value=(undefined===series ? '' : series.series_name))
+      br
+      label(for='series_description') Description:
+      textarea#series_description.form-control(type='textarea', name='series_description') #{undefined===series ? '' : series.series_description}
+      br
+      label(for='') Image(Optional):
+      input#series_image.form-control(type='file', name='series_image')
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+   ul
+    for error in errors
+     li!= error.msg

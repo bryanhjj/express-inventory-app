@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div(class='list-title')
+    h1= title
+
+  ul
+    each model in modelkits_list
+      li
+        a(href=model.url) #{model.name}
+        |  (#{model.grade.grade_name})
+        |  (#{model.series.series_name})
+
+    else
+      li There are no model kits available at the moment.

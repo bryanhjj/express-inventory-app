@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='' enctype="multipart/form-data")
+    div.form-group
+      label(for='grade_name') Grade:
+      input#grade_name.form-control(type='text', placeholder='Perfect Grade, Full Mechanics, etc.' name='grade_name' value=(undefined===grade ? '' : grade.grade_name))
+      br
+      label(for='grade_description') Description:
+      textarea#grade_description.form-control(type='textarea', name='grade_description') #{undefined===grade ? '' : grade.grade_description}
+      br
+      label(for='') Image(Optional):
+      input#icon_image.form-control(type='file', name='icon_image')
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+   ul
+    for error in errors
+     li!= error.msg

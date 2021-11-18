@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /* 'Bebas Neue', cursive */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Shippori+Antique&display=swap'); /* 'Shippori Antique', sans-serif */
+
+html {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --fg: #202120;
+  --bg: #393A3A;
+  --fc: #f8f8f8;
+  --gold: goldenrod;
+  --darker: #181818;
+  --footertextcolor: #B4B5B5;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(var(--fg) 20%, var(--bg) 60%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--fc);
+  position: relative;
+  font-family: 'Shippori Antique', sans-serif;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.list-title {
+  color: var(--gold);
+  border-bottom: 1vh solid var(--gold);
+  margin-bottom: 4vh;
+  width: 100%;
+}
+
+hr {
+  background-color: var(--gold);
+}
+
+/* ------------------------ layout.pug --------------------------------- */
+
+.app-name {
+  color: var(--gold);
+  margin-top: 20px;
+  font-size: 30px;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.col-sm-2 {
+  background-color: var(--darker);
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+}
+
+.sidebar-nav {
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+  color: var(--fc);
+}
+
+.sidebar-nav a {
+  color: var(--fc);
+}
+
+.sidebar-nav a:hover {
+  color: var(--fc);
+  text-decoration: none;
+}
+
+.nav-items:hover {
+  color: var(--fc);
+  border-style: inset;
+  border-width: 2px;
+}
+
+.col-sm-10 {
+  margin-top: 50px;
+  left: 35vh;
+}
+
+footer {
+  text-align: center;
+  color: var(--footertextcolor);
+  font-size: 0.7rem;
+  background-color: var(--darker);
+  bottom: 0;
+  position: absolute;
+  padding: 0;
+  left: 2vh;
+}
+
+/* -------------------------- index --------------------------- */
+
+.title-container {
+  margin-bottom: 5vh;
+  color: var(--gold);
+  border-bottom: 1vh solid var(--gold);
+}
+
+.inventory-for {
+  margin-bottom: 5vh;
+}
+
+/* -------------------------- modelkits --------------------------- */
+
+.modelname-container {
+  color: var(--gold);
+  border-bottom: 1vh solid var(--gold);
+  margin-bottom: 4vh;
+  width: 100%;
+}
+
+.model-name {
+  font-size: 40px;
+}
+
+.modelimage-container {
+  position: relative;
+  margin: 0;
+  width: fit-content;
+  height: fit-content;
+
+}
+
+.modelimage-container img {
+  width: 45vh;
+  height: 35vh;
+}
+
+.model-details {
+  position: relative;
+  margin: 0;
+  width: 60%;
+  left: 55vh;
+  bottom: 35vh;
+  word-wrap: break-word;
+  padding-right: 2vh;
+}
+
+.model-description, .model-price, .model-qty {
+  word-wrap: break-word;
+  line-height: 80%;
+}
+
+.model-description-content {
+  line-height: 100%;
+}
+
+/* --------------------------series------------------------------- */
+
+.seriesname-container {
+  color: var(--gold);
+  border-bottom: 1vh solid var(--gold);
+  margin-bottom: 4vh;
+  width: 100%;
+}
+
+.seriesimage-container {
+  margin-bottom: 4vh;
+  text-align: left;
+}
+
+.seriesimage-container img {
+  width: 43vh;
+  height: 30vh;
+}
+
+.seriesdescp-container {
+  word-wrap: break-word;
+  margin-bottom: 4vh;
+}
+
+/* --------------------------grade------------------------------- */
+
+.gradename-container {
+  color: var(--gold);
+  border-bottom: 1vh solid var(--gold);
+  margin-bottom: 4vh;
+  width: 100%;
+}
+
+.gradeimage-container {
+  margin-bottom: 4vh;
+  text-align: left;
+}
+
+.gradeimage-container img {
+  width: 30vh;
+  height: 20vh;
+}
+
+.gradedescp-container {
+  word-wrap: break-word;
+  margin-bottom: 4vh;
+}

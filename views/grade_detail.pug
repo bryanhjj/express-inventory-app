@@ -1,0 +1,31 @@
+extends layout
+
+block content
+
+  div(class='gradename-container')
+    h1 #{grade.grade_name}
+  
+  if grade.icon_image
+    div(class='gradeimage-container')
+      img(src='/'+grade.icon_image, alt='icon of the grade')
+  
+  div(class='gradedescp-container')
+    p #{grade.grade_description}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Model kits
+
+    ul
+      each model in grade_modelkits
+        li
+          a(href=model.url) #{model.name} (#{model.series.series_name})
+
+      else
+        p This grade has no associated model kits at the moment.
+  
+  hr
+  p
+    a(href=grade.url+'/delete') Delete Grade
+  p
+    a(href=grade.url+'/update') Update Grade

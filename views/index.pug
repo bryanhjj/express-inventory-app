@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div(class='title-container')
+    h1= title
+
+  div(class='inventory-for')
+    h3 Displaying inventory record details for :
+    h4 Gunpla model kit store
+
+  if error
+    p Error getting dynamic content.
+  else
+    p Your store has the following record counts:
+
+    ul
+      li #[strong Types of model kits :] !{data.modelkits_count}
+      li #[strong Types of grades :] !{data.grade_count}
+      li #[strong Types of series :] !{data.series_count}

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1 #{title}: #{series.series_name}
+  p= series.series_description
+
+  if series_modelkits.length
+
+    p #[strong Delete the following model kits before attempting to delete this series.]
+
+    div(style='margin-left:20px;margin-top:20px')
+
+      h4 Model kits:
+
+      dl
+      each modelkit in series_modelkits
+        dt
+          a(href=modelkit.url) #{modelkit.name}
+        dd #{modelkit.description}
+
+  else
+    p Do you really want to delete this Series category?
+
+    form(method='POST' action='')
+      div.form-group
+        input#seriesid.form-control(type='hidden',name='seriesid', required='true', value=series._id )
+
+      button.btn.btn-primary(type='submit') Delete
