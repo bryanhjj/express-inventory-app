@@ -2,6 +2,7 @@
 An inventory magement web-based app written in Express (Node)
 
 Link to live preview: <a href='https://blooming-dawn-98733.herokuapp.com/catalog'>Inventory Manager</a>
+(Unfortunately heroku has stopped offering free dyno plans, and thus the live preview, which was hosted by heroku, no longer works until further notice.)
 
 This is a project from The Odin Project which allows students to practice with Node as well as utilizing databases for web-based apps.
 
